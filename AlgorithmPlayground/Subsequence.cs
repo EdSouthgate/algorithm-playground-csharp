@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,12 +13,17 @@ namespace AlgorithmPlayground
         {
 
             int? foundAtIndex = null;
+            int maxIndex = 0;
             for(int i = 0; i < s.Length; i++)
             {
                 char sLetter = s[i];
                 int currIndex = i;
                 bool letterFound = false;
-                for(int j = currIndex; j < t.Length; j++)
+                if(foundAtIndex != null)
+                {
+                    maxIndex = foundAtIndex.Value + 1;
+                }
+                for(int j = Math.Max(currIndex, maxIndex); j < t.Length; j++)
                 {
                     if(sLetter == t[j])
                     {

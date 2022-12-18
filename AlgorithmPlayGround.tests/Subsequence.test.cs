@@ -60,5 +60,19 @@ namespace AlgorithmPlaygroundTests
             // Assert 
             Assert.False(result);
         }
+
+        [Fact]
+        public void ShouldReturnFalseIfThereAreNotEnoughLetters()
+        {
+            // Arrange 
+            string string1 = "aaaaaa";
+            string string2 = "bbaaaaa";
+
+            // Act 
+            Boolean result = Subsequence.IsSubsequence(string1, string2);
+
+            // Assert 
+            Assert.False(result);
+        }
     }
 }
