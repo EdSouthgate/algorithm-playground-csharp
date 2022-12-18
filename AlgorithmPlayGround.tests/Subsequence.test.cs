@@ -46,5 +46,19 @@ namespace AlgorithmPlaygroundTests
             // Assert 
             Assert.True(result);
         }
+
+        [Fact]
+        public void ShouldReturnFalseIfSubstringIsOutOfOrder()
+        {
+            // Arrange 
+            string string1 = "acb";
+            string string2 = "ahbgdc";
+
+            // Act
+            Boolean result = Subsequence.IsSubsequence(string1, string2);
+
+            // Assert 
+            Assert.False(result);
+        }
     }
 }

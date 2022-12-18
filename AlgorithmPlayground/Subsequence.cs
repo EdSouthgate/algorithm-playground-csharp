@@ -10,6 +10,8 @@ namespace AlgorithmPlayground
     {
         public static Boolean IsSubsequence(string s, string t)
         {
+
+            int? foundAtIndex = null;
             for(int i = 0; i < s.Length; i++)
             {
                 char sLetter = s[i];
@@ -20,6 +22,11 @@ namespace AlgorithmPlayground
                     if(sLetter == t[j])
                     {
                         letterFound = true;
+                        if(foundAtIndex > j)
+                        {
+                            return false;
+                        }
+                        foundAtIndex = j;
                         break;
                     }
                 }
